@@ -1,0 +1,285 @@
+﻿@page "/dashboard/dashboard-analytics"
+@inject IJSRuntime JS
+<PageTitle>Dashboard Analytics</PageTitle> 
+  
+<!-- Page header-->
+                    <header class="bg-dark">
+                        <div class="container-xl px-5">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h1 class="text-white py-3 mb-0 display-6">Analytics Overview</h1>
+                                <div class="ms-4">
+                                    <button class="btn btn-text-white btn sm me-2" type="button">
+                                        <i class="material-icons leading-icon">lightbulb</i>
+                                        Learning
+                                    </button>
+                                    <button class="btn btn-text-white btn sm" type="button">
+                                        <i class="material-icons leading-icon">insights</i>
+                                        Insights
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="container-xl px-5 pt-5">
+                        <!-- Example alert-->
+                        <div class="alert alert-primary alert-dismissible fade show p-4 mb-5" role="alert">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined me-3">info</i>
+                                <div class="me-4">
+                                    One of your properties is now receiving data.
+                                    <a class="alert-link" href="#!">Check it now.</a>
+                                </div>
+                            </div>
+                            <button class="btn-close p-4" type="button" data-bs-dismiss="alert" aria-label="Close" style="top: 4px"></button>
+                        </div>
+                        <div class="row gx-5">
+                            <div class="col-lg-8 mb-5">
+                                <div class="card card-raised h-100 overflow-hidden">
+                                    <div class="card-header bg-white p-0">
+                                        <mwc-tab-bar>
+                                            <mwc-tab label="Users" icon="people" stacked onclick='setMyLineChart("USERS")'></mwc-tab>
+                                            <mwc-tab label="Sessions" icon="timer" stacked onclick='setMyLineChart("SESSIONS")'></mwc-tab>
+                                            <mwc-tab label="Conversions" icon="timeline" stacked onclick='setMyLineChart("CONVERSIONS")'></mwc-tab>
+                                        </mwc-tab-bar>
+                                    </div>
+                                    <div class="card-body pt-4"><canvas id="dashboardAreaChart" width="100%" height="40"></canvas></div>
+                                    <div class="card-footer bg-transparent p-0">
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item ripple-gray">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div class="me-3">Revenue Target</div>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-2">25%</div>
+                                                        <div class="progress me-2" style="width: 8rem; height: 0.25rem"><div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                                        <div class="d-flex align-items-center p-2 text-primary">
+                                                            <div class="fst-button">Open Report</div>
+                                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item ripple-gray">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div class="me-3">Acquisition Goal</div>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-2">100%</div>
+                                                        <div class="progress me-2" style="width: 8rem; height: 0.25rem"><div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                                        <div class="d-flex align-items-center p-2 text-primary">
+                                                            <div class="fst-button">Open Report</div>
+                                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-5">
+                                <div class="card card-raised bg-primary h-100">
+                                    <div class="card-body">
+                                        <h2 class="overline text-white">Content Summary</h2>
+                                        <div class="list-group list-group-flush list-group-light">
+                                            <div class="list-group-item d-flex justify-content-between px-0">
+                                                <div class="caption font-monospace text-white-50">Top Pages</div>
+                                                <div class="caption font-monospace text-white-50 ms-2">Visitors</div>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between px-0">
+                                                /
+                                                <div class="ms-2">12,842</div>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between px-0">
+                                                /themes
+                                                <div class="ms-2">5,549</div>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between px-0">
+                                                /previews
+                                                <div class="ms-2">3,923</div>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between px-0">
+                                                /campaign
+                                                <div class="ms-2">2,993</div>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between px-0">
+                                                /contact
+                                                <div class="ms-2">1,832</div>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between px-0">
+                                                /support
+                                                <div class="ms-2">915</div>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between px-0">
+                                                /status
+                                                <div class="ms-2">513</div>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between px-0">
+                                                /setup
+                                                <div class="ms-2">452</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-0">
+                                        <div class="d-flex justify-content-end ripple-white px-3 py-2">
+                                            <div class="d-flex align-items-center p-2 text-white">
+                                                <div class="fst-button">Advanced report</div>
+                                                <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gx-5">
+                            <div class="col-xl-4 col-md-6 mb-5">
+                                <div class="card card-raised overflow-hidden h-100">
+                                    <div class="card-header bg-primary text-white">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="fw-500">Acquisition</div>
+                                            <div class="dropdown my-n2 me-n2">
+                                                <button class="btn btn-lg btn-text-light btn-icon dropdown-toggle" id="segmentsDropdownButton" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></button>
+                                                <ul class="dropdown-menu" aria-labelledby="segmentsDropdownButton">
+                                                    <li><a class="dropdown-item" href="#!">Action</a></li>
+                                                    <li><a class="dropdown-item" href="#!">Another action</a></li>
+                                                    <li><a class="dropdown-item" href="#!">Something else here</a></li>
+                                                    <li><hr class="dropdown-divider" /></li>
+                                                    <li><a class="dropdown-item" href="#!">Separated link</a></li>
+                                                    <li><a class="dropdown-item" href="#!">Separated link</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex h-100 w-100 align-items-center justify-content-center">
+                                            <div class="w-100" style="max-width: 20rem"><canvas id="myPieChart"></canvas></div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent p-0">
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item d-flex justify-content-between">
+                                                <div class="caption font-monospace text-muted">Traffic Channel</div>
+                                                <div class="caption font-monospace text-muted ms-2">Users</div>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between">
+                                                <div class="me-2">
+                                                    <span class="text-primary me-1">&#x25CF;</span>
+                                                    Search
+                                                </div>
+                                                <div class="ms-2">5,649</div>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between">
+                                                <div class="me-2">
+                                                    <span class="text-info me-1">&#x25CF;</span>
+                                                    Direct
+                                                </div>
+                                                <div class="ms-2">3,919</div>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between">
+                                                <div class="me-2">
+                                                    <span class="text-secondary me-1">&#x25CF;</span>
+                                                    Referral
+                                                </div>
+                                                <div class="ms-2">2,126</div>
+                                            </div>
+                                            <div class="list-group-item d-flex justify-content-between">
+                                                <div class="me-2">
+                                                    <span class="text-warning me-1">&#x25CF;</span>
+                                                    Social
+                                                </div>
+                                                <div class="ms-2">972</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 col-md-6 mb-5">
+                                <div class="card card-raised h-100">
+                                    <div class="card-header bg-primary text-white">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="fw-500">Demographics</div>
+                                            <div class="dropdown my-n2 me-n2">
+                                                <button class="btn btn-lg btn-text-light btn-icon dropdown-toggle" id="segmentsDropdownButton" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></button>
+                                                <ul class="dropdown-menu" aria-labelledby="segmentsDropdownButton">
+                                                    <li><a class="dropdown-item" href="#!">Action</a></li>
+                                                    <li><a class="dropdown-item" href="#!">Another action</a></li>
+                                                    <li><a class="dropdown-item" href="#!">Something else here</a></li>
+                                                    <li><hr class="dropdown-divider" /></li>
+                                                    <li><a class="dropdown-item" href="#!">Separated link</a></li>
+                                                    <li><a class="dropdown-item" href="#!">Separated link</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="h-100 d-flex align-items-center"><canvas id="dashboardHorizontalBarChart" height="200"></canvas></div>
+                                    </div>
+                                    <div class="card-footer bg-transparent p-0">
+                                        <div class="d-flex justify-content-end ripple-gray px-3 py-2">
+                                            <div class="d-flex align-items-center p-2 text-primary">
+                                                <div class="fst-button">Advanced report</div>
+                                                <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gx-5">
+                            <!-- Privacy suggestions illustrated card-->
+                            <div class="col-xl-6 mb-5">
+                                <div class="card card-raised h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="me-4">
+                                                <h2 class="card-title mb-0">Privacy Suggestions</h2>
+                                                <p class="card-text">Take our privacy checkup to choose which settings are right for you.</p>
+                                            </div>
+                                            <img src="assets/img/illustrations/security.svg" alt="..." style="height: 6rem" />
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent position-relative ripple-gray px-4"><a class="stretched-link text-decoration-none" href="#!">Review suggestions (4)</a></div>
+                                </div>
+                            </div>
+                            <!-- Account storage illustrated card-->
+                            <div class="col-xl-6 mb-5">
+                                <div class="card card-raised h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="me-4">
+                                                <h2 class="card-title mb-0">Account Storage</h2>
+                                                <p class="card-text">Your account storage is shared across all devices.</p>
+                                                <div class="progress mb-2" style="height: 0.25rem"><div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="30"></div></div>
+                                                <div class="card-text">10 GB of 30 GB used</div>
+                                            </div>
+                                            <img src="assets/img/illustrations/cloud.svg" alt="..." style="height: 6rem" />
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent position-relative ripple-gray px-4"><a class="stretched-link text-decoration-none" href="#!">Manage storage</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var PieLabels = new string[] { "Alpha", "Beta", "Gamma", "Delta"}; 
+            var PieDatas = new double[] { 27.21, 15.58, 11.25, 8.32 }; 
+            await JS.InvokeVoidAsync("LoadPieChart","myPieChart",PieLabels,PieDatas);
+
+            var AreaLabels = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"}; 
+            var AreaDatas = new double[] { 9481, 15684, 13495, 25198, 15498, 18654, 32519 }; 
+            await JS.InvokeVoidAsync("LoadAreaChart","dashboardAreaChart",AreaLabels,AreaDatas);
+
+            var BarLabels = new string[] { "United States", "India", "South Korea", "United Kingdom", "Canada", "Brazil", "Indonesia"};
+            var BarDataLabel1 = "This Year";
+            var BarDataLabel2 = "Last Year";
+            var BarData1 = new double[] { 15, 8.7, 7.5, 4.4, 3.8, 2.7, 2.3 }; 
+            var BarData2 = new double[] { 14.2, 8.2, 7.1, 4.2, 3.5, 2.1, 1.7}; 
+            await JS.InvokeVoidAsync("LoadBarChartHorizontal","dashboardHorizontalBarChart",BarLabels,BarDataLabel1,BarDataLabel2,BarData1,BarData2);
+
+            //await JS.InvokeVoidAsync("LoadDataTable","datatablesSimple");
+
+        }
+    }
+}

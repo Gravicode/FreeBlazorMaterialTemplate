@@ -1,0 +1,169 @@
+﻿@page "/apps/knowledgebase-categories"
+@inject IJSRuntime JS
+<PageTitle>Knowledgebase Categories</PageTitle> 
+  
+ <!-- Page header-->
+                    <header class="bg-dark">
+                        <div class="container-xl px-5"><h1 class="text-white py-3 mb-0 display-6">Knowledgebase - Categories</h1></div>
+                    </header>
+                    <div class="container-xl p-5">
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 gx-5">
+                            <div class="col">
+                                <!-- Collapsible card (users)-->
+                                <div class="card card-raised card-collapsible mb-5" id="usersCollapse">
+                                    <div class="card-header bg-transparent" data-bs-toggle="collapse" data-bs-target="#usersCollapseContent" aria-expanded="true" aria-controls="usersCollapseContent">
+                                        <div class="d-flex align-items-center">
+                                            <i class="material-icons text-primary">person</i>
+                                            <div class="ms-3">
+                                                <div class="fs-6 mb-1 fw-500">Users</div>
+                                                <div class="small">Add or manage users</div>
+                                            </div>
+                                        </div>
+                                        <i class="material-icons card-header-icon">expand_less</i>
+                                    </div>
+                                    <div class="card-body px-0 collapse show" id="usersCollapseContent" data-bs-parent="#usersCollapse">
+                                        <div class="nav flex-column">
+                                            <a class="nav-link ripple-gray px-3 py-2" href="#!">Add a user</a>
+                                            <a class="nav-link ripple-gray px-3 py-2" href="#!">Delete a user</a>
+                                            <a class="nav-link ripple-gray px-3 py-2" href="#!">Update a users name or email</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Single card (groups)-->
+                                <div class="card card-raised ripple-primary mb-5">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <i class="material-icons text-primary">groups</i>
+                                            <div class="ms-3">
+                                                <div class="fs-6 mb-1 fw-500">Groups</div>
+                                                <a class="small stretched-link text-reset text-decoration-none" href="#!">Create or manage groups</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Single card (insights)-->
+                                <div class="card card-raised ripple-primary mb-5 mb-xl-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <i class="material-icons text-primary">insights</i>
+                                            <div class="ms-3">
+                                                <div class="fs-6 mb-1 fw-500">Insights</div>
+                                                <a class="small stretched-link text-reset text-decoration-none" href="#!">View activity reports</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!-- Collapsible card (billing)-->
+                                <div class="card card-raised card-collapsible mb-5" id="billingCollapse">
+                                    <div class="card-header bg-transparent" data-bs-toggle="collapse" data-bs-target="#billingCollapseContent" aria-expanded="true" aria-controls="billingCollapseContent">
+                                        <div class="d-flex align-items-center">
+                                            <i class="material-icons text-primary">credit_card</i>
+                                            <div class="ms-3">
+                                                <div class="fs-6 mb-1 fw-500">Billing</div>
+                                                <div class="small">Manage subscriptions</div>
+                                            </div>
+                                        </div>
+                                        <i class="material-icons card-header-icon">expand_less</i>
+                                    </div>
+                                    <div class="card-body px-0 collapse show" id="billingCollapseContent" data-bs-parent="#billingCollapse">
+                                        <div class="nav flex-column">
+                                            <a class="nav-link ripple-gray px-3 py-2" href="#!">Manage subscriptions</a>
+                                            <a class="nav-link ripple-gray px-3 py-2" href="#!">Payment accounts</a>
+                                            <a class="nav-link ripple-gray px-3 py-2" href="#!">Get more services</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Single card (devices)-->
+                                <div class="card card-raised ripple-primary mb-5">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <i class="material-icons text-primary">devices</i>
+                                            <div class="ms-3">
+                                                <div class="fs-6 mb-1 fw-500">Devices</div>
+                                                <a class="small stretched-link text-reset text-decoration-none" href="#!">Manage devices and data</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Single card (support)-->
+                                <div class="card card-raised ripple-primary mb-5 mb-xl-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <i class="material-icons text-primary">support</i>
+                                            <div class="ms-3">
+                                                <div class="fs-6 mb-1 fw-500">Support</div>
+                                                <a class="small stretched-link text-reset text-decoration-none" href="#!">Connect with the support team</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!-- Collapsible Card (domains)-->
+                                <div class="card card-raised card-collapsible mb-5" id="domainsCollapse">
+                                    <div class="card-header bg-transparent" data-bs-toggle="collapse" data-bs-target="#domainsCollapseContent" aria-expanded="true" aria-controls="domainsCollapseContent">
+                                        <div class="d-flex align-items-center">
+                                            <i class="material-icons text-primary">language</i>
+                                            <div class="ms-3">
+                                                <div class="fs-6 mb-1 fw-500">Domains</div>
+                                                <div class="small">Manage your domains</div>
+                                            </div>
+                                        </div>
+                                        <i class="material-icons card-header-icon">expand_less</i>
+                                    </div>
+                                    <div class="card-body px-0 collapse show" id="domainsCollapseContent" data-bs-parent="#domainsCollapse">
+                                        <div class="nav flex-column">
+                                            <a class="nav-link ripple-gray px-3 py-2" href="#!">Manage domains</a>
+                                            <a class="nav-link ripple-gray px-3 py-2" href="#!">Add a domain</a>
+                                            <a class="nav-link ripple-gray px-3 py-2" href="#!">Change your primary domain</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Single card (security)-->
+                                <div class="card card-raised ripple-primary mb-5">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <i class="material-icons text-primary">security</i>
+                                            <div class="ms-3">
+                                                <div class="fs-6 mb-1 fw-500">Security</div>
+                                                <a class="small stretched-link text-reset text-decoration-none" href="#!">Configure security settings</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Single card (migration)-->
+                                <div class="card card-raised ripple-primary">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <i class="material-icons text-primary">input</i>
+                                            <div class="ms-3">
+                                                <div class="fs-6 mb-1 fw-500">Migration</div>
+                                                <a class="small stretched-link text-reset text-decoration-none" href="#!">Move data from other platforms</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Divider-->
+                        <hr class="my-5" />
+                        <section class="text-center">
+                            <div class="subheading-1 mb-2">Was this article helpful?</div>
+                            <div class="mb-3">
+                                <button class="btn btn-outline-primary mx-1" type="button">
+                                    <i class="material-icons leading-icon">thumb_up</i>
+                                    Yes
+                                </button>
+                                <button class="btn btn-outline-primary mx-1" type="button">
+                                    <i class="material-icons leading-icon">thumb_down</i>
+                                    No
+                                </button>
+                            </div>
+                            <div class="small text-muted">4 out of 5 found this article helpful</div>
+                        </section>
+                    </div>
+@code {
+
+}

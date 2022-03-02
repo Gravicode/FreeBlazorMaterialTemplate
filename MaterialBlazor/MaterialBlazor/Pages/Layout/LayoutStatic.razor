@@ -1,0 +1,26 @@
+﻿@page "/layout/layout-static"
+@inject IJSRuntime JS
+<PageTitle>Layout Static</PageTitle> 
+   
+<div class="container-xl px-5">
+                        <h1 class="page-header mt-5 mb-4">Static Navigation</h1>
+                        <!-- Static layout example card-->
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <p class="mb-0">
+                                    This page is an example of using static navigation. By removing the
+                                    <code>.nav-fixed</code>
+                                    class from the
+                                    <code>body</code>
+                                    , the top navigation and side navigation will become static on scroll. Scroll down this page to see an example.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Demo spacer-->
+                        <div style="height: 100vh"></div>
+                        <!-- Static layout example card-->
+                        <div class="card mb-4"><div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div></div>
+                    </div>
+@code {
+
+}

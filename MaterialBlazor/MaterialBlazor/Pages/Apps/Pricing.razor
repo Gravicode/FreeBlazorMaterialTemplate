@@ -1,0 +1,189 @@
+﻿@page "/apps/pricing"
+@inject IJSRuntime JS
+<PageTitle>Pricing</PageTitle> 
+   
+<div class="container-xl p-5">
+                        <div class="text-center mb-5">
+                            <h1>Simple, transparent pricing</h1>
+                            <p class="mb-0">No contracts, no surprise fees</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="card card-raised h-100">
+                                    <div class="card-body">
+                                        <h2 class="overline">Intro</h2>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="display-5">$19</div>
+                                            <div class="text-muted ms-2">/ month</div>
+                                        </div>
+                                        <p>For most businesses that want to optimize web queries</p>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    Auto generated email
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    Dedicated analytics platform
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    Custom, secure email
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    1 TB cloud storage per user
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer border-0 bg-transparent pt-0"><a class="btn btn-outline-primary d-grid" href="#!">Choose Plan</a></div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card card-raised h-100">
+                                    <div class="card-body">
+                                        <h2 class="overline">Base</h2>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="display-5">$39</div>
+                                            <div class="text-muted ms-2">/ month</div>
+                                        </div>
+                                        <p>For most businesses that want to optimize web queries</p>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    All limited links
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    Dedicated analytics platform
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    Chat support
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    Custom, secure email
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    1 TB cloud storage per user
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer border-0 bg-transparent pt-0"><a class="btn btn-outline-primary d-grid" href="#!">Choose Plan</a></div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card card-raised h-100 bg-primary text-white">
+                                    <div class="card-body">
+                                        <h2 class="overline text-white">Popular</h2>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="display-5 text-white">$99</div>
+                                            <div class="text-white-50 ms-2">/ month</div>
+                                        </div>
+                                        <p>For most businesses that want to optimize web queries</p>
+                                        <ul class="list-group list-group-flush list-group-light mb-4">
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    All limited links
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    Dedicated analytics platform
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    Chat support
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    Custom, secure email
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    1 TB cloud storage per user
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer border-0 bg-transparent pt-0"><a class="btn btn-outline-white d-grid" href="#!">Choose Plan</a></div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card card-raised h-100">
+                                    <div class="card-body">
+                                        <h2 class="overline">Enterprise</h2>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="display-5">$199</div>
+                                            <div class="text-muted ms-2">/ month</div>
+                                        </div>
+                                        <p>For most businesses that want to optimize web queries</p>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    All limited links
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    Dedicated analytics platform
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    Chat support
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    Custom, secure email
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="material-icons icon-xs me-2">check</i>
+                                                    1 TB cloud storage per user
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer border-0 bg-transparent pt-0"><a class="btn btn-outline-primary d-grid" href="#!">Choose Plan</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+@code {
+
+}

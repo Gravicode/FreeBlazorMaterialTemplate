@@ -12,6 +12,10 @@
     
 window.addEventListener('DOMContentLoaded', event => {
 
+   
+});
+
+function LoadLitePicker() {
     const litepickerSingleDate = document.getElementById('litepickerSingleDate');
     if (litepickerSingleDate) {
         new Litepicker({
@@ -39,4 +43,4 @@ window.addEventListener('DOMContentLoaded', event => {
             format: 'MMM DD, YYYY'
         });
     }
-});
+}

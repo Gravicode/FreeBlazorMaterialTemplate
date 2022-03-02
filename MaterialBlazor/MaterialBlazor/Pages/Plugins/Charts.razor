@@ -1,0 +1,218 @@
+﻿@page "/plugins/charts"
+@inject IJSRuntime JS
+<PageTitle>Charts</PageTitle> 
+<div class="container-xl px-5">
+                        <div class="d-flex mt-10 mb-4 align-items-center">
+                            <img class="me-4" src="assets/img/icons/charts.svg" alt="..." style="height: 48px" />
+                            <h1 class="page-header mb-0">Charts</h1>
+                        </div>
+                        <div class="row gx-5">
+                            <div class="col-lg-9">
+                                <p>
+                                    Charts depict large sets of data in graphical forms to make data easier to visualize and comprehend. In Material Admin Pro, data visualization has been implemented by means of the
+                                    <a href="https://www.chartjs.org/docs/master/" target="_blank">Chart.js</a>
+                                    plugin, an open source, JavaScript charting library.
+                                </p>
+                                <p>The third party plugin has been restyled and customized to fit Material Design's specifications for data visualization. Below are some examples of common use cases for representing data through charts.</p>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="line-charts">Line Charts</h2>
+                                <p class="mb-4">Use line charts to display minor variations in data. In this example, tooltips have been enabled along with axis labels.</p>
+                                <h3 class="mb-4" id="line-chart-default">Default Line Chart</h3>
+                                <p class="mb-4">By default, the line chart has no rounding at data points in order to show precise fluctuations in the data set. The axis lables and tooltips are styled according to Material Design specifications.</p>
+                                <div class="card mb-5">
+                                    <div class="card-header bg-white px-4"><div class="fs-5 my-1">Example Line Chart</div></div>
+                                    <div class="card-body p-4"><canvas id="myLineChart" width="100" height="30"></canvas></div>
+                                </div>
+                                <h3 class="mb-4" id="line-chart-smooth">Smooth Line Chart</h3>
+                                <p class="mb-4">Modifying the line tension of a line chart can add a new stylistic element to the data presentation. Smoothed line charts are best suited for data sets that represent gradual changes over time where displaying sudden changes is not crucial.</p>
+                                <div class="card">
+                                    <div class="card-header bg-white px-4"><div class="fs-5 my-1">Example Smooth Line Chart</div></div>
+                                    <div class="card-body p-4"><canvas id="mySmoothLineChart" width="100" height="30"></canvas></div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="area-charts">Area Charts</h2>
+                                <p class="mb-4">Use area charts to summarize relationships between data sets or how individual data points relate to a whole.</p>
+                                <h3 class="mb-4" id="area-chart-default">Default Area Chart</h3>
+                                <p class="mb-4">By default, the area chart is similar to the line chart except that it has a fill color underneath the line.</p>
+                                <div class="card mb-5">
+                                    <div class="card-header bg-white px-4"><div class="fs-5 my-1">Example Area Chart</div></div>
+                                    <div class="card-body p-4"><canvas id="myAreaChart" width="100" height="30"></canvas></div>
+                                </div>
+                                <h3 class="mb-4" id="area-chart-smooth">Smooth Area Chart</h3>
+                                <p class="mb-4">Smooth area charts are also best used for displaying data with gradual changes where visualizing sudden, precise changes in data is not necessary.</p>
+                                <div class="card">
+                                    <div class="card-header bg-white px-4"><div class="fs-5 my-1">Example Smooth Area Chart</div></div>
+                                    <div class="card-body p-4"><canvas id="mySmoothAreaChart" width="100" height="30"></canvas></div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="bar-charts">Bar Chart</h2>
+                                <p class="mb-4">Use bar charts to express larger variations in data, how individual data points relate to a whole, comparisons between data, and ranking.</p>
+                                <h3 class="mb-4" id="bar-chart-default">Horizontal Bar Chart</h3>
+                                <p class="mb-4">The default bar chart is a single color and shows axis labels and tooltips when an individual bar is hovered over or interacted with.</p>
+                                <div class="card mb-5">
+                                    <div class="card-header bg-white px-4"><div class="fs-5 my-1">Example Bar Chart</div></div>
+                                    <div class="card-body p-4"><canvas id="myBarChart" width="100" height="30"></canvas></div>
+                                </div>
+                                <h3 class="mb-4" id="bar-chart-grouped">Grouped Bar Chart</h3>
+                                <p>A grouped bar chart shows multiple data sets along the same axis, perfect for comparing two different sets of data.</p>
+                                <p class="mb-4">The below example shows two data sets, however more can be used.</p>
+                                <div class="card mb-5">
+                                    <div class="card-header bg-white px-4"><div class="fs-5 my-1">Example Grouped Bar Chart</div></div>
+                                    <div class="card-body p-4"><canvas id="myGroupedBarChart" width="100" height="30"></canvas></div>
+                                </div>
+                                <h3 class="mb-4" id="bar-chart-horizontal">Horizontal Bar Chart</h3>
+                                <p class="mb-4">The horizontal bar chart is a variation on the vertical bar chart. This chart type is helpful for showing trend data and comparisons.</p>
+                                <div class="card mb-5">
+                                    <div class="card-header bg-white px-4"><div class="fs-5 my-1">Example Horizontal Bar Chart</div></div>
+                                    <div class="card-body p-4"><canvas id="myHorizontalBarChart" width="100" height="40"></canvas></div>
+                                </div>
+                                <h3 class="mb-4" id="bar-chart-grouped-horizontal">Grouped Horizontal Bar Chart</h3>
+                                <p class="mb-4">Multiple data sets are also supported with horizontal bar charts.</p>
+                                <div class="card">
+                                    <div class="card-header bg-white px-4"><div class="fs-5 my-1">Example Horizontal Bar Chart</div></div>
+                                    <div class="card-body p-4"><canvas id="myGroupedHorizontalBarChart" width="100" height="40"></canvas></div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 id="pie-chart">Pie Chart</h2>
+                                <p class="mb-4">Pie charts express portions of a whole, using arcs or angles within a circle.</p>
+                                <div class="card">
+                                    <div class="card-header bg-white px-4"><div class="fs-5 my-1">Example Pie Chart</div></div>
+                                    <div class="card-body p-4">
+                                        <div class="row justify-content-center">
+                                            <div class="col-xxl-8 col-xl-10"><canvas id="myPieChart" width="100" height="50"></canvas></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 id="doughnut-chart">Doughnut Chart</h2>
+                                <p class="mb-4">A variation on the pie chart, a doughnut chart is a pie chart with the center cut out.</p>
+                                <div class="card">
+                                    <div class="card-header bg-white px-4"><div class="fs-5 my-1">Example Doughnut Chart</div></div>
+                                    <div class="card-body p-4">
+                                        <div class="row justify-content-center">
+                                            <div class="col-xxl-8 col-xl-10"><canvas id="myDoughnutChart" width="100" height="50"></canvas></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <p class="mb-0">For a full list of available charts, configuration options, and usage instructions for Chart.js, use the link below to view the official plugin documentation.</p>
+                                <hr class="my-5" />
+                                <h3 class="overline">Related Links</h3>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-6 col-xxl-4">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/brands/chartjs.svg" alt="Chart.js Logo" />
+                                                <div class="card-title text-truncate mb-2">Chart.js</div>
+                                                <p class="card-text">Simple yet flexible JavaScript charting for designers &amp; developers</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="https://www.chartjs.org/docs/master/" target="_blank" title="Chart.js Documentation">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-5"></div>
+                            </div>
+                            <div class="col-lg-3 mb-5 mb-lg-0">
+                                <div class="sticky-top nav-stick">
+                                    <div class="nav-heading">Contents</div>
+                                    <ul class="nav flex-column" id="navStick">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#line-charts">Line Charts</a>
+                                            <ul class="nav flex-column mt-0 ms-3">
+                                                <li class="nav-item"><a class="nav-link border-0" href="#line-chart-default">Default</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#line-chart-smooth">Smooth</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#area-charts">Area Charts</a>
+                                            <ul class="nav flex-column mt-0 ms-3">
+                                                <li class="nav-item"><a class="nav-link border-0" href="#area-chart-default">Default</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#area-chart-smooth">Smooth</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#bar-charts">Bar Charts</a>
+                                            <ul class="nav flex-column mt-0 ms-3">
+                                                <li class="nav-item"><a class="nav-link border-0" href="#bar-chart-default">Default</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#bar-chart-grouped">Grouped</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#bar-chart-horizontal">Horizontal</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#bar-chart-grouped-horizontal">Grouped Horizontal</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" href="#pie-chart">Pie Chart</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#doughnut-chart">Doughnut Chart</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+          
+
+            var LineLabels = new string[] { "Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"}; 
+            var LineDatas = new double[] { 10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451 }; 
+            await JS.InvokeVoidAsync("LoadLineChart","myLineChart",LineLabels,LineDatas);
+
+            var SmoothLineLabelName = "Sessions";
+            var SmoothLineLabels = new string[] { "Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13" };
+            var SmoothLineDatas = new double[] {10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451 }; 
+            await JS.InvokeVoidAsync("LoadSmoothLineChart","mySmoothLineChart",SmoothLineLabelName,SmoothLineLabels,SmoothLineDatas);
+               
+            var AreaLabelName = "Sessions";
+            var AreaLabels = new string[] { "Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13" };
+            var AreaDatas = new double[] { 10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451 }; 
+            await JS.InvokeVoidAsync("LoadAreaChartDemo","myAreaChart",AreaLabelName,AreaLabels,AreaDatas);  
+            
+            var SmoothAreaLabelName = "Sessions";
+            var SmoothAreaLabels = new string[] { "Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"};
+            var SmoothAreaDatas = new double[] { 10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451 }; 
+            await JS.InvokeVoidAsync("LoadSmoothAreaChartDemo","mySmoothAreaChart",SmoothAreaLabelName,SmoothAreaLabels,SmoothAreaDatas);
+               
+            
+            var BarLabelName = "Revenue";
+            var BarLabels = new string[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+            var BarDatas = new double[] { 215, 1235, 2265, 3402, 4215, 5312, 6251, 7841, 8921, 9877, 11984, 14256 }; 
+            await JS.InvokeVoidAsync("LoadBarChartDemo","myBarChart",BarLabelName,BarLabels,BarDatas);
+
+            var GroupedBarLabels = new string[] {"January", "February", "March", "April", "May", "June"};
+            var GroupedBarDataLabel1 = "Last Year";
+            var GroupedBarDataLabel2 = "This Year";
+            var GroupedBarData1 = new double[] { 215, 2265, 4215, 6251, 8921, 11984 }; 
+            var GroupedBarData2 = new double[] { 1235, 3402, 5312, 7841, 9877, 14256 }; 
+            await JS.InvokeVoidAsync("LoadGroupedBarChartDemo","myGroupedBarChart",GroupedBarLabels,GroupedBarDataLabel1,GroupedBarDataLabel2,GroupedBarData1,GroupedBarData2);
+           
+          
+            var HorizontalBarLabelName = "Revenue";
+            var HorizontalBarLabels = new string[] {"January", "February", "March", "April", "May", "June"};
+            var HorizontalBarDatas = new double[] { 4215, 5312, 6251, 7841, 9877, 14256 }; 
+            await JS.InvokeVoidAsync("LoadHorizontalBarDemo","myHorizontalBarChart",HorizontalBarLabelName,HorizontalBarLabels,HorizontalBarDatas);
+
+
+            var GroupedHorizontalBarLabels = new string[] {"January", "February", "March", "April", "May", "June"};
+            var GroupedHorizontalBarDataLabel1 = "Last Year";
+            var GroupedHorizontalBarDataLabel2 = "This Year";
+            var GroupedHorizontalBarData1 = new double[] { 215, 2265, 4215, 6251, 8921, 11984 }; 
+            var GroupedHorizontalBarData2 = new double[] { 1235, 3402, 5312, 7841, 9877, 14256 }; 
+            await JS.InvokeVoidAsync("LoadGroupedHorizontalBar","myGroupedHorizontalBarChart",GroupedHorizontalBarLabels,GroupedHorizontalBarDataLabel1,GroupedHorizontalBarDataLabel2,GroupedHorizontalBarData1,GroupedHorizontalBarData2);
+
+           
+            var DoughnutLabels = new string[] {"Alpha", "Beta", "Gamma", "Delta"};
+            var DoughnutDatas = new double[] { 27.21, 15.58, 11.25, 8.32}; 
+            await JS.InvokeVoidAsync("LoadDoughnutChart","myDoughnutChart",DoughnutLabels,DoughnutDatas);
+
+              var PieLabels = new string[] { "Alpha", "Beta", "Gamma", "Delta"}; 
+            var PieDatas = new double[] { 27.21, 15.58, 11.25, 8.32 }; 
+            await JS.InvokeVoidAsync("LoadPieChart","myPieChart",PieLabels,PieDatas); 
+          
+           
+
+        }
+    }
+}

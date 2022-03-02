@@ -1,0 +1,154 @@
+﻿@page "/apps/knowledgebase-home"
+@inject IJSRuntime JS
+<PageTitle>Knowledgebase Home</PageTitle> 
+  
+<!-- Page header-->
+                    <header class="bg-dark">
+                        <div class="container-xl px-5"><h1 class="text-white py-3 mb-0 display-6">Knowledgebase</h1></div>
+                    </header>
+                    <div class="container-xl p-5">
+                        <div class="row gx-5">
+                            <div class="col-lg-9">
+                                <!-- Page header-->
+                                <header class="mb-5">
+                                    <h2 class="display-5 mb-0">Material Admin Pro</h2>
+                                    <p class="lead mb-4">Explore guides and troubleshooting topics about our product</p>
+                                    <mwc-textfield class="w-100" label="Search" outlined icontrailing="search" placeholder="What can we help you find?"></mwc-textfield>
+                                </header>
+                                <!-- Divider-->
+                                <hr class="my-5" />
+                                <!-- Segment-->
+                                <section class="mb-5">
+                                    <h3 class="overline" id="main">Main Categories</h3>
+                                    <div class="row gx-5">
+                                        <div class="col-md-6 mb-5">
+                                            <div class="card card-raised ripple-primary h-100">
+                                                <div class="card-body p-4">
+                                                    <i class="material-icons icon-lg text-primary">payment</i>
+                                                    <h2 class="display-6">Payments</h2>
+                                                    <p>Build an online portal with a knowledgebase so your users know how to work with your product.</p>
+                                                    <a class="stretched-link fst-button text-decoration-none d-inline-flex align-items-center" href="#!">
+                                                        Get Started
+                                                        <i class="material-icons icon-sm ms-2">arrow_forward</i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-5">
+                                            <div class="card card-raised ripple-primary h-100">
+                                                <div class="card-body p-4">
+                                                    <i class="material-icons icon-lg text-primary">store</i>
+                                                    <h2 class="display-6">Business Operations</h2>
+                                                    <p>Build an online portal with a knowledgebase so your users know how to work with your product.</p>
+                                                    <a class="stretched-link fst-button text-decoration-none d-inline-flex align-items-center" href="#!">
+                                                        Learn More
+                                                        <i class="material-icons icon-sm ms-2">arrow_forward</i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-5 mb-lg-0">
+                                            <div class="card card-raised ripple-primary h-100">
+                                                <div class="card-body p-4">
+                                                    <i class="material-icons icon-lg text-primary">manage_accounts</i>
+                                                    <h2 class="display-6">Account</h2>
+                                                    <p>Build an online portal with a knowledgebase so your users know how to work with your product.</p>
+                                                    <a class="stretched-link fst-button text-decoration-none d-inline-flex align-items-center" href="#!">
+                                                        Browse Articles
+                                                        <i class="material-icons icon-sm ms-2">arrow_forward</i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card card-raised ripple-primary h-100">
+                                                <div class="card-body p-4">
+                                                    <i class="material-icons icon-lg text-primary">admin_panel_settings</i>
+                                                    <h2 class="display-6">Security</h2>
+                                                    <p>Build an online portal with a knowledgebase so your users know how to work with your product.</p>
+                                                    <a class="stretched-link fst-button text-decoration-none d-inline-flex align-items-center" href="#!">
+                                                        View Settings
+                                                        <i class="material-icons icon-sm ms-2">arrow_forward</i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- Divider-->
+                                <hr class="my-5" />
+                                <!-- Related Articles-->
+                                <h3 class="overline" id="related">Related Articles</h3>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-6 col-xxl-4 mb-4 mb-md-0 mb-lg-4 mb-xxl-0">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/icons/background.svg" />
+                                                <div class="card-title text-truncate mb-2">Material Design Fundamentals</div>
+                                                <p class="card-text">Fundamentals surrounding the material design language</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="#!">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-6 col-xxl-4 mb-4 mb-md-0 mb-lg-4 mb-xxl-0">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/icons/cards.svg" />
+                                                <div class="card-title text-truncate mb-2">Structure &amp; Sound</div>
+                                                <p class="card-text">Instructions for using sound within your UI</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="#!">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-6 col-xxl-4">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/icons/icons.svg" />
+                                                <div class="card-title text-truncate mb-2">Targeting</div>
+                                                <p class="card-text">How to target the perfect demographic for your app</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="#!">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Divider-->
+                                <hr class="my-5" />
+                                <section class="text-center">
+                                    <div class="subheading-1 mb-2">Was this article helpful?</div>
+                                    <div class="mb-3">
+                                        <button class="btn btn-outline-primary mx-1" type="button">
+                                            <i class="material-icons leading-icon">thumb_up</i>
+                                            Yes
+                                        </button>
+                                        <button class="btn btn-outline-primary mx-1" type="button">
+                                            <i class="material-icons leading-icon">thumb_down</i>
+                                            No
+                                        </button>
+                                    </div>
+                                    <div class="small text-muted">4 out of 5 found this article helpful</div>
+                                </section>
+                            </div>
+                            <div class="col-lg-3 mb-5 mb-lg-0">
+                                <!-- Side column sticky navigation stick-->
+                                <div class="sticky-top nav-stick">
+                                    <div class="nav-heading">Contents</div>
+                                    <ul class="nav flex-column" id="navStick">
+                                        <li class="nav-item"><a class="nav-link" href="#main">Main categories</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#related">Related articles</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+@code {
+
+}

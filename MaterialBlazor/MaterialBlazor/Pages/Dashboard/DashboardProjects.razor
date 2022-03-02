@@ -1,0 +1,247 @@
+﻿@page "/dashboard/dashboard-projects"
+@inject IJSRuntime JS
+<PageTitle>Dashboard Projects</PageTitle> 
+<div class="container-xl px-5 py-10 bg-dark">
+                        <div class="row gx-5">
+                            <div class="col-md-8 mb-4 mb-md-0">
+                                <div class="d-flex flex-column h-100 justify-content-center">
+                                    <h1 class="page-header mb-4 text-white">Dashboard</h1>
+                                    <p class="text-white mb-0">Create beautiful and intuitive products with Material Admin Pro</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="font-monospace text-uppercase small text-white fw-300 mb-2">Popular</div>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-2"><a class="link-white fs-5" href="#!">Material Theming</a></li>
+                                    <li class="mb-2"><a class="link-white fs-5" href="#!">Components</a></li>
+                                    <li class="mb-2"><a class="link-white fs-5" href="#!">Utilities</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-xl p-5">
+                        <div class="d-flex justify-content-between align-items-end">
+                            <h2 class="display-6 mb-0">Projects</h2>
+                            <a class="small text-decoration-none fw-500 d-inline-flex align-items-center" href="#!">
+                                View all
+                                <i class="material-icons icon-sm">chevron_right</i>
+                            </a>
+                        </div>
+                        <!-- Divider-->
+                        <hr class="mt-2 mb-5" />
+                        <div class="row gx-5">
+                            <div class="col-sm-6 col-xl-3 mb-5">
+                                <div class="card card-raised h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <i class="material-icons icon-lg text-primary me-2">topic</i>
+                                            <img class="rounded-circle" src="https://source.unsplash.com/rDEOVtE7vOs/100x100" style="height: 1.75rem; width: 1.75rem" />
+                                        </div>
+                                        <div class="fs-6 fw-500">Fresh Start Inc.</div>
+                                        <div class="card-text font-monospace mb-3">4/10 Tasks</div>
+                                        <div class="text-xs text-muted mb-1">40% complete</div>
+                                        <div class="progress" style="height: 0.25rem"><div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xl-3 mb-5">
+                                <div class="card card-raised h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <i class="material-icons icon-lg text-primary me-2">topic</i>
+                                            <img class="rounded-circle" src="https://source.unsplash.com/2LowviVHZ-E/100x100" style="height: 1.75rem; width: 1.75rem" />
+                                        </div>
+                                        <div class="fs-6 fw-500">Project Outsource</div>
+                                        <div class="card-text font-monospace mb-3">12/30 Tasks</div>
+                                        <div class="text-xs text-muted mb-1">40% complete</div>
+                                        <div class="progress" style="height: 0.25rem"><div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xl-3 mb-5">
+                                <div class="card card-raised h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <i class="material-icons icon-lg text-success me-2">fact_check</i>
+                                            <img class="rounded-circle" src="https://source.unsplash.com/d2MSDujJl2g/100x100" style="height: 1.75rem; width: 1.75rem" />
+                                        </div>
+                                        <div class="fs-6 fw-500">Launch App</div>
+                                        <div class="card-text font-monospace mb-3">7/7 Tasks</div>
+                                        <div class="text-xs text-muted mb-1">Complete!</div>
+                                        <div class="progress" style="height: 0.25rem"><div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xl-3 mb-5">
+                                <div class="card h-100 border-2 border-dashed ripple-primary">
+                                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                        <i class="material-icons text-primary mb-2">create_new_folder</i>
+                                        <a class="stretched-link fst-button text-decoration-none d-inline-flex align-items-center" href="#!">Create Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-end">
+                            <h2 class="display-6 mb-0">Recent</h2>
+                            <a class="small text-decoration-none fw-500 d-inline-flex align-items-center" href="#!">
+                                View all
+                                <i class="material-icons icon-sm">chevron_right</i>
+                            </a>
+                        </div>
+                        <hr class="mt-2 mb-5" />
+                        <div class="row gx-5">
+                            <!-- Projects column-->
+                            <div class="col-xl-8 col-lg-7 mb-5">
+                                <div class="card card-raised h-100 overflow-hidden">
+                                    <div class="card-header bg-primary text-white px-4"><div class="fw-500">Project Files</div></div>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover mb-0">
+                                                <tbody class="align-middle">
+                                                    <thead class="text-xs font-monospace">
+                                                        <td class="px-4 py-2 border-bottom-0 text-muted">Name</td>
+                                                        <td class="px-4 py-2 border-bottom-0 text-muted">Members</td>
+                                                        <td class="px-4 py-2 border-bottom-0 text-muted text-end">Size</td>
+                                                    </thead>
+                                                    <tr>
+                                                        <td class="px-4 border-top">
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="material-icons text-muted me-2">folder</i>
+                                                                Design Assets
+                                                            </div>
+                                                        </td>
+                                                        <td class="px-4 border-top">Only you</td>
+                                                        <td class="px-4 border-top text-end">2.4 GB</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="px-4">
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="material-icons text-muted me-2">folder_shared</i>
+                                                                Team Photos
+                                                            </div>
+                                                        </td>
+                                                        <td class="px-4">4 members</td>
+                                                        <td class="px-4 text-end">315 MB</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="px-4">
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="material-icons text-muted me-2">description</i>
+                                                                Memo_FS_Meeting.pdf
+                                                            </div>
+                                                        </td>
+                                                        <td class="px-4">Only you</td>
+                                                        <td class="px-4 text-end">23 MB</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="px-4">
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="material-icons text-muted me-2">description</i>
+                                                                Brand_Guidelines.pdf
+                                                            </div>
+                                                        </td>
+                                                        <td class="px-4">Only you</td>
+                                                        <td class="px-4 text-end">23 MB</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="px-4">
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="material-icons text-muted me-2">description</i>
+                                                                Main_Page_Content.pdf
+                                                            </div>
+                                                        </td>
+                                                        <td class="px-4">Only you</td>
+                                                        <td class="px-4 text-end">23 MB</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="px-4">
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="material-icons text-muted me-2">audiotrack</i>
+                                                                Sound_Byte.mp3
+                                                            </div>
+                                                        </td>
+                                                        <td class="px-4">Only you</td>
+                                                        <td class="px-4 text-end">12 MB</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="px-4 border-bottom-0">
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="material-icons text-muted me-2">audiotrack</i>
+                                                                Greeting_Welcome.mp3
+                                                            </div>
+                                                        </td>
+                                                        <td class="px-4 border-bottom-0">Only you</td>
+                                                        <td class="px-4 text-end border-bottom-0">12 MB</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent position-relative ripple-gray">
+                                        <a class="d-flex align-items-center justify-content-end text-decoration-none stretched-link text-primary" href="#!">
+                                            <div class="fst-button">Manage Storage</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Checklist column-->
+                            <div class="col-xl-4 col-lg-5 mb-5">
+                                <div class="card card-raised h-100 overflow-hidden">
+                                    <div class="card-header bg-primary text-white px-4"><div class="fw-500">Sprint Checklist</div></div>
+                                    <div class="card-body p-0">
+                                        <!-- Clickable checklist-->
+                                        <ul class="list-group list-group-flush checklist">
+                                            <li class="list-group-item list-group-item-action ps-2">
+                                                <div class="d-flex align-items-center">
+                                                    <mwc-formfield class="pe-none" label="Newsletter draft"><mwc-checkbox checked></mwc-checkbox></mwc-formfield>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action ps-2">
+                                                <div class="d-flex align-items-center">
+                                                    <mwc-formfield class="pe-none" label="UX testing report"><mwc-checkbox checked></mwc-checkbox></mwc-formfield>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action ps-2">
+                                                <div class="d-flex align-items-center">
+                                                    <mwc-formfield class="pe-none" label="Color selection for brand"><mwc-checkbox></mwc-checkbox></mwc-formfield>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action ps-2">
+                                                <div class="d-flex align-items-center">
+                                                    <mwc-formfield class="pe-none" label="Zone 6 area report"><mwc-checkbox></mwc-checkbox></mwc-formfield>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action ps-2">
+                                                <div class="d-flex align-items-center">
+                                                    <mwc-formfield class="pe-none" label="Send crash reports"><mwc-checkbox></mwc-checkbox></mwc-formfield>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action ps-2">
+                                                <div class="d-flex align-items-center">
+                                                    <mwc-formfield class="pe-none" label="Setup new marketing page"><mwc-checkbox></mwc-checkbox></mwc-formfield>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer bg-transparent position-relative ripple-gray">
+                                        <a class="d-flex align-items-center justify-content-end text-decoration-none stretched-link text-primary" href="#!">
+                                            <div class="fst-button">Manage Tasks</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+          
+            await JS.InvokeVoidAsync("LoadChecklist");
+
+        }
+    }
+}

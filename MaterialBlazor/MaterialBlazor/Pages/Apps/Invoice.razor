@@ -1,0 +1,117 @@
+﻿@page "/apps/invoice"
+@inject IJSRuntime JS
+<PageTitle>Invoice</PageTitle> 
+  
+<div class="container-xl p-5">
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-9 col-xl-10 col-xxl-9">
+                                <div class="card card-raised">
+                                    <div class="card-header bg-primary p-4">
+                                        <div class="row justify-content-between align-items-center">
+                                            <div class="col-auto">
+                                                <!-- Invoice branding-->
+                                                <h1 class="display-6 text-white">Invoice</h1>
+                                                <div class="text-white mb-0">Start Bootstrap LLC</div>
+                                                <div class="text-white-50">#29301</div>
+                                            </div>
+                                            <div class="col-auto text-end d-none d-lg-block">
+                                                <!-- Invoice actions-->
+                                                <div class="d-flex gap-2">
+                                                    <button class="btn btn-lg btn-text-white btn-icon" type="button"><i class="material-icons">download</i></button>
+                                                    <button class="btn btn-lg btn-text-white btn-icon" type="button"><i class="material-icons">print</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <!-- Invoice table-->
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless mb-0">
+                                                <thead class="border-bottom">
+                                                    <tr class="text-xs font-monospace text-muted fw-500">
+                                                        <th scope="col">Description</th>
+                                                        <th class="text-end" scope="col">Hours</th>
+                                                        <th class="text-end" scope="col">Rate</th>
+                                                        <th class="text-end" scope="col">Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- Invoice item 1-->
+                                                    <tr class="border-bottom">
+                                                        <td>
+                                                            <div class="fw-500">SB Admin Pro</div>
+                                                            <div class="small text-muted d-none d-md-block">A professional UI toolkit for designing admin dashboards and web applications</div>
+                                                        </td>
+                                                        <td class="text-end fw-500">12</td>
+                                                        <td class="text-end fw-500">$50.00</td>
+                                                        <td class="text-end fw-500">$600.00</td>
+                                                    </tr>
+                                                    <!-- Invoice item 2-->
+                                                    <tr class="border-bottom">
+                                                        <td>
+                                                            <div class="fw-500">SB UI Kit Pro</div>
+                                                            <div class="small text-muted d-none d-md-block">A UI toolkit for creating marketing websites and landing pages</div>
+                                                        </td>
+                                                        <td class="text-end fw-500">15</td>
+                                                        <td class="text-end fw-500">$55.00</td>
+                                                        <td class="text-end fw-500">$825.00</td>
+                                                    </tr>
+                                                    <!-- Invoice item 3-->
+                                                    <tr class="border-bottom">
+                                                        <td>
+                                                            <div class="fw-500">Pro HTML Bundle</div>
+                                                            <div class="small text-muted d-none d-md-block">A fully coded set of UI resources for creating a comprehensive web application</div>
+                                                        </td>
+                                                        <td class="text-end fw-500">4</td>
+                                                        <td class="text-end fw-500">$125.00</td>
+                                                        <td class="text-end fw-500">$500.00</td>
+                                                    </tr>
+                                                    <!-- Invoice subtotal-->
+                                                    <tr>
+                                                        <td class="align-middle text-end pb-0" colspan="3"><div class="overline text-muted">Subtotal</div></td>
+                                                        <td class="align-middle text-end pb-0"><div class="fw-bold">$,1925.00</div></td>
+                                                    </tr>
+                                                    <!-- Invoice tax column-->
+                                                    <tr>
+                                                        <td class="align-middle text-end pb-0" colspan="3"><div class="overline text-muted">Tax (7%)</div></td>
+                                                        <td class="align-middle text-end pb-0"><div class="fw-bold">$134.75</div></td>
+                                                    </tr>
+                                                    <!-- Invoice total-->
+                                                    <tr>
+                                                        <td class="align-middle text-end" colspan="3"><div class="overline text-muted">Total Amount Due</div></td>
+                                                        <td class="align-middle text-end"><div class="display-6 text-primary">$2059.75</div></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                                                <!-- Invoice - sent to info-->
+                                                <div class="text-xs font-monospace text-muted mb-1">To</div>
+                                                <div class="mb-1">Company Name</div>
+                                                <div class="text-muted">1234 Company Dr.</div>
+                                                <div class="text-muted">Yorktown, MA 39201</div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                                                <!-- Invoice - sent from info-->
+                                                <div class="text-xs font-monospace text-muted mb-1">From</div>
+                                                <div class="mb-1">Start Bootstrap</div>
+                                                <div class="text-muted">5678 Company Rd.</div>
+                                                <div class="text-muted">Yorktown, MA 39201</div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <!-- Invoice - additional notes-->
+                                                <div class="text-xs font-monospace text-muted mb-1">Note</div>
+                                                <div class="small mb-0">Payment is due 15 days after receipt of this invoice. Please make checks or money orders out to Company Name, and include the invoice number in the memo. We appreciate your business, and hope to be working with you again very soon!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+@code {
+
+}

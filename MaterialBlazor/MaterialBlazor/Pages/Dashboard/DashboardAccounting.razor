@@ -1,0 +1,164 @@
+﻿@page "/dashboard/dashboard-accounting"
+@inject IJSRuntime JS
+<PageTitle>Dashboard Accounting</PageTitle> 
+ 
+<div class="container-xl p-5">
+                        <div class="row gx-5">
+                            <div class="col-lg-5 col-md-6 mb-5">
+                                <div class="card card-raised border-top border-4 border-primary h-100">
+                                    <div class="card-body p-5">
+                                        <div class="overline text-muted mb-4">Company Inc.</div>
+                                        <h1>Welcome, Roger</h1>
+                                        <p class="card-text mb-4">Here are your most recent transactions:</p>
+                                        <table class="table table-sm mb-0">
+                                            <tbody>
+                                                <tr>
+                                                    <td><div class="text-muted fst-italic">Pending</div></td>
+                                                    <td>Roger Henn</td>
+                                                    <td class="text-end"><div class="text-muted">-$5,400.00</div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-muted"><div class="fst-italic">Pending</div></td>
+                                                    <td>Caroline McLean</td>
+                                                    <td class="text-end"><div class="text-muted">-$5,400.00</div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-muted">Mar 15</td>
+                                                    <td>PayPal</td>
+                                                    <td class="text-end"><div class="text-success fw-500">$264.48</div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-bottom-0 text-muted">Mar 12</td>
+                                                    <td class="border-bottom-0">Stripe</td>
+                                                    <td class="border-bottom-0 text-end"><div class="text-success fw-500">$311.15</div></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="card-footer bg-transparent position-relative ripple-gray">
+                                        <a class="d-flex align-items-center justify-content-end text-decoration-none stretched-link text-primary" href="#!">
+                                            <div class="fst-button">View More</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-6 mb-5">
+                                <div class="card card-raised bg-primary bg-gradient text-white h-100">
+                                    <div class="card-body p-5">
+                                        <div class="text-center">
+                                            <div class="overline text-white-50 mb-4">Current Balance</div>
+                                            <h2 class="text-white mb-2">
+                                                <sup>$</sup>
+                                                1,681
+                                                <sup>.28</sup>
+                                            </h2>
+                                            <div class="d-flex align-items-center justify-content-center text-white-50">
+                                                <i class="material-icons icon-sm me-2">trending_up</i>
+                                                <div class="small">$948.72 Today, Mar 16</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="px-1"><canvas id="dashboardAreaChartLight"></canvas></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gx-5">
+                            <div class="col-md-6 mb-5">
+                                <div class="card card-raised border-top border-4 border-secondary h-100">
+                                    <div class="card-body p-5">
+                                        <div class="overline text-muted mb-4">Money Out Last 30 Days</div>
+                                        <h2 class="mb-4">
+                                            <sup>$</sup>
+                                            -10,800
+                                            <sup>.22</sup>
+                                        </h2>
+                                        <div class="mb-2">
+                                            <div class="mb-1">Roger Henn</div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="progress w-100 me-3" style="height: 0.25rem"><div class="progress-bar bg-secondary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                                <div class="flex-shrink-0">$5K</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2">
+                                            <div class="mb-1">Caroline McLean</div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="progress w-100 me-3" style="height: 0.25rem"><div class="progress-bar bg-secondary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                                <div class="flex-shrink-0">$5K</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-0">
+                                            <div class="mb-1">PayPal</div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="progress w-100 me-3" style="height: 0.25rem"><div class="progress-bar bg-secondary" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                                <div class="flex-shrink-0">$0.22</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent position-relative ripple-gray">
+                                        <a class="d-flex align-items-center justify-content-end text-decoration-none stretched-link text-primary" href="#!">
+                                            <div class="fst-button">View All</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-5">
+                                <div class="card card-raised border-top border-4 border-success h-100">
+                                    <div class="card-body p-5">
+                                        <div class="overline text-muted mb-4">Money In Last 30 Days</div>
+                                        <h2 class="mb-4">
+                                            <sup>$</sup>
+                                            11,532
+                                            <sup>.78</sup>
+                                        </h2>
+                                        <div class="mb-2">
+                                            <div class="mb-1">Bank Transfer</div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="progress w-100 me-3" style="height: 0.25rem"><div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                                <div class="flex-shrink-0">$11K</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2">
+                                            <div class="mb-1">Stripe</div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="progress w-100 me-3" style="height: 0.25rem"><div class="progress-bar bg-success" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                                <div class="flex-shrink-0">$459.66</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2">
+                                            <div class="mb-1">PayPal</div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="progress w-100 me-3" style="height: 0.25rem"><div class="progress-bar bg-success" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                                <div class="flex-shrink-0">$0.22</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-0">
+                                            <div class="mb-1">Other</div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="progress w-100 me-3" style="height: 0.25rem"><div class="progress-bar bg-success" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                                <div class="flex-shrink-0">$0.81</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent position-relative ripple-gray">
+                                        <a class="d-flex align-items-center justify-content-end text-decoration-none stretched-link text-primary" href="#!">
+                                            <div class="fst-button">View All</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+@code {
+     protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var AreaLightLabels = new string[] { "Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"}; 
+            var AreaLightDatas = new double[] { 10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451 }; 
+            await JS.InvokeVoidAsync("LoadChartAreaLight","dashboardAreaChartLight",AreaLightLabels,AreaLightDatas);
+        }
+    }
+}

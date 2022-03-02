@@ -1,4 +1,8 @@
 window.addEventListener('DOMContentLoaded', event => {
+    
+});
+
+function LoadChecklist() {
     var checkboxesListItems = [].slice.call(document.querySelectorAll('.checklist li'));
     checkboxesListItems.map(function (checkboxesListItem) {
         checkboxesListItem.addEventListener('click', event => {
@@ -11,4 +15,4 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-});
+}

@@ -1,0 +1,1207 @@
+﻿@page "/content/content-tables"
+@inject IJSRuntime JS
+<PageTitle>Content Tables</PageTitle> 
+ 
+<div class="container-xl px-5">
+                        <div class="d-flex mt-10 mb-4 align-items-center">
+                            <img class="me-4" src="assets/img/icons/tables.svg" alt="..." style="height: 48px" />
+                            <h1 class="page-header mb-0">Tables</h1>
+                        </div>
+                        <div class="row gx-5">
+                            <div class="col-lg-9">
+                                <p>Tables present tabular information in a two-dimensional format. By default, Bootstrap's table styling is slightly more minimal than what Material Design specifies, but builds to offer more options than what is in Material's specifications. For this reason, we start with Bootstrap's default table, style it to fit Material Design's guidelines, and build on additional, optional classes from the default state.</p>
+                                <p>
+                                    Material Admin Pro also provides an interactive
+                                    <a href="/plugins/datatables">data tables plugin</a>
+                                    in addition to the table content styling on this page.
+                                </p>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="default">Default Table</h2>
+                                <p>Bootstrap's default table has been modified to match Material's table styling. The font size has been brought down in size, with the text color being made intentionally darker for higher contrast and greater legibility.</p>
+                                <p class="mb-4">The below is an example of the default table. Material's base styling for tables, which features hoverable rows and borders surrounding the table, are shown in the examples after this one.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="tableDefaultDemoTab" data-bs-target="#tableDefaultDemo" aria-controls="tableDefaultDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="tableDefaultHtmlTab" data-bs-target="#tableDefaultHtml" aria-controls="tableDefaultHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#tableDefaultPug" role="tab" aria-controls="tableDefaultPug" aria-selected="false" id="tableDefaultPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="tableDefaultDemo" aria-labelledby="tableDefaultDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <table class="table mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">First</th>
+                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Handle</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@@mdo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td colspan="2">Larry the Bird</td>
+                                                        <td>@@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableDefaultHtml" aria-labelledby="tableDefaultHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@@twitter</td>
+        </tr>
+    </tbody>
+</table></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableDefaultPug" aria-labelledby="tableDefaultPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code>table.table
+    thead
+        tr
+            th(scope='col') #
+            th(scope='col') First
+            th(scope='col') Last
+            th(scope='col') Handle
+    tbody
+        tr
+            th(scope='row') 1
+            td Mark
+            td Otto
+            td @@mdo
+        tr
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr
+            th(scope='row') 3
+            td(colspan='2') Larry the Bird
+            td @@twitter
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="bordered">Bordered Table</h2>
+                                <p class="mb-4">
+                                    By adding the
+                                    <code class="code-inline">.table-bordered</code>
+                                    class to the table element, the Bootstrap table design is one step closer Material's default design.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="tableBorderedDemoTab" data-bs-target="#tableBorderedDemo" aria-controls="tableBorderedDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="tableBorderedHtmlTab" data-bs-target="#tableBorderedHtml" aria-controls="tableBorderedHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#tableBorderedPug" role="tab" aria-controls="tableBorderedPug" aria-selected="false" id="tableBorderedPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="tableBorderedDemo" aria-labelledby="tableBorderedDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <table class="table table-bordered mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">First</th>
+                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Handle</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@@mdo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td colspan="2">Larry the Bird</td>
+                                                        <td>@@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableBorderedHtml" aria-labelledby="tableBorderedHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@@twitter</td>
+        </tr>
+    </tbody>
+</table></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableBorderedPug" aria-labelledby="tableBorderedPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code>table.table.table-bordered
+    thead
+        tr
+            th(scope='col') #
+            th(scope='col') First
+            th(scope='col') Last
+            th(scope='col') Handle
+    tbody
+        tr
+            th(scope='row') 1
+            td Mark
+            td Otto
+            td @@mdo
+        tr
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr
+            th(scope='row') 3
+            td(colspan='2') Larry the Bird
+            td @@twitter
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="hoverable">Hoverable Rows</h2>
+                                <p class="mb-4">
+                                    By adding the
+                                    <code class="code-inline">.table-hover</code>
+                                    class to the table element in conjunction with the
+                                    <code class="code-inline">.table-bordered</code>
+                                    class, the table design now matches the Material Design default.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="tableHoverableDemoTab" data-bs-target="#tableHoverableDemo" aria-controls="tableHoverableDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="tableHoverableHtmlTab" data-bs-target="#tableHoverableHtml" aria-controls="tableHoverableHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#tableHoverablePug" role="tab" aria-controls="tableHoverablePug" aria-selected="false" id="tableHoverablePugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="tableHoverableDemo" aria-labelledby="tableHoverableDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <table class="table table-bordered table-hover mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">First</th>
+                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Handle</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@@mdo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td colspan="2">Larry the Bird</td>
+                                                        <td>@@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableHoverableHtml" aria-labelledby="tableHoverableHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@@twitter</td>
+        </tr>
+    </tbody>
+</table></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableHoverablePug" aria-labelledby="tableHoverablePugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code>table.table.table-bordered.table-hover
+    thead
+        tr
+            th(scope='col') #
+            th(scope='col') First
+            th(scope='col') Last
+            th(scope='col') Handle
+    tbody
+        tr
+            th(scope='row') 1
+            td Mark
+            td Otto
+            td @@mdo
+        tr
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr
+            th(scope='row') 3
+            td(colspan='2') Larry the Bird
+            td @@twitter
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="striped">Striped Rows</h2>
+                                <p class="mb-4">
+                                    By adding the
+                                    <code class="code-inline">.table-striped</code>
+                                    class to the table element, every other row will feature a slightly darker background color. This feature is outside of Materail Design's specifications, but can enhance the readability of a table, especially when working with large data sets.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="tableStripedDemoTab" data-bs-target="#tableStripedDemo" aria-controls="tableStripedDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="tableStripedHtmlTab" data-bs-target="#tableStripedHtml" aria-controls="tableStripedHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#tableStripedPug" role="tab" aria-controls="tableStripedPug" aria-selected="false" id="tableStripedPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="tableStripedDemo" aria-labelledby="tableStripedDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <table class="table table-bordered table-hover table-striped mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">First</th>
+                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Handle</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@@mdo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td colspan="2">Larry the Bird</td>
+                                                        <td>@@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableStripedHtml" aria-labelledby="tableStripedHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@@twitter</td>
+        </tr>
+    </tbody>
+</table></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableStripedPug" aria-labelledby="tableStripedPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code>table.table.table-bordered.table-hover.table-striped
+    thead
+        tr
+            th(scope='col') #
+            th(scope='col') First
+            th(scope='col') Last
+            th(scope='col') Handle
+    tbody
+        tr
+            th(scope='row') 1
+            td Mark
+            td Otto
+            td @@mdo
+        tr
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr
+            th(scope='row') 3
+            td(colspan='2') Larry the Bird
+            td @@twitter
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="small">Small Table</h2>
+                                <p class="mb-4">
+                                    By adding the
+                                    <code class="code-inline">.table-sm</code>
+                                    class to the table element, the padding of each table cell is decresed. This table format is especially useful for considerably large data sets.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="tableSmallDemoTab" data-bs-target="#tableSmallDemo" aria-controls="tableSmallDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="tableSmallHtmlTab" data-bs-target="#tableSmallHtml" aria-controls="tableSmallHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#tableSmallPug" role="tab" aria-controls="tableSmallPug" aria-selected="false" id="tableSmallPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="tableSmallDemo" aria-labelledby="tableSmallDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <table class="table table-bordered table-hover table-striped table-sm mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">First</th>
+                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Handle</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@@mdo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td colspan="2">Larry the Bird</td>
+                                                        <td>@@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableSmallHtml" aria-labelledby="tableSmallHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><table class="table table-bordered table-hover table-striped table-sm">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@@twitter</td>
+        </tr>
+    </tbody>
+</table></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableSmallPug" aria-labelledby="tableSmallPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code>table.table.table-bordered.table-hover.table-striped.table-sm
+    thead
+        tr
+            th(scope='col') #
+            th(scope='col') First
+            th(scope='col') Last
+            th(scope='col') Handle
+    tbody
+        tr
+            th(scope='row') 1
+            td Mark
+            td Otto
+            td @@mdo
+        tr
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr
+            th(scope='row') 3
+            td(colspan='2') Larry the Bird
+            td @@twitter
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="dark">Dark Table</h2>
+                                <p class="mb-4">
+                                    By adding the
+                                    <code class="code-inline">.table-dark</code>
+                                    class to the table element, the table will take on an inverse color system with a dark background and light text.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="tableDarkDemoTab" data-bs-target="#tableDarkDemo" aria-controls="tableDarkDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="tableDarkHtmlTab" data-bs-target="#tableDarkHtml" aria-controls="tableDarkHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#tableDarkPug" role="tab" aria-controls="tableDarkPug" aria-selected="false" id="tableDarkPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="tableDarkDemo" aria-labelledby="tableDarkDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <table class="table table-bordered table-hover table-striped table-dark mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">First</th>
+                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Handle</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@@mdo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td colspan="2">Larry the Bird</td>
+                                                        <td>@@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableDarkHtml" aria-labelledby="tableDarkHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><table class="table table-bordered table-hover table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@@twitter</td>
+        </tr>
+    </tbody>
+</table></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableDarkPug" aria-labelledby="tableDarkPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code>table.table.table-bordered.table-hover.table-striped.table-dark
+    thead
+        tr
+            th(scope='col') #
+            th(scope='col') First
+            th(scope='col') Last
+            th(scope='col') Handle
+    tbody
+        tr
+            th(scope='row') 1
+            td Mark
+            td Otto
+            td @@mdo
+        tr
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr
+            th(scope='row') 3
+            td(colspan='2') Larry the Bird
+            td @@twitter
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="color">Adding Color</h2>
+                                <p class="mb-4">
+                                    Color can be added to the entire table by using a table background class. These classes are named using the format
+                                    <code class="code-inline">.table-{color}</code>
+                                    where
+                                    <em>color</em>
+                                    is any color defined on the color map.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="tableColorsDemoTab" data-bs-target="#tableColorsDemo" aria-controls="tableColorsDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="tableColorsHtmlTab" data-bs-target="#tableColorsHtml" aria-controls="tableColorsHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#tableColorsPug" role="tab" aria-controls="tableColorsPug" aria-selected="false" id="tableColorsPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="tableColorsDemo" aria-labelledby="tableColorsDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <table class="table table-bordered table-hover table-primary mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">First</th>
+                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Handle</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@@mdo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td colspan="2">Larry the Bird</td>
+                                                        <td>@@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableColorsHtml" aria-labelledby="tableColorsHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><table class="table table-bordered table-hover table-primary">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@@twitter</td>
+        </tr>
+    </tbody>
+</table></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableColorsPug" aria-labelledby="tableColorsPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code>table.table.table-bordered.table-hover.table-primary
+    thead
+        tr
+            th(scope='col') #
+            th(scope='col') First
+            th(scope='col') Last
+            th(scope='col') Handle
+    tbody
+        tr
+            th(scope='row') 1
+            td Mark
+            td Otto
+            td @@mdo
+        tr
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr
+            th(scope='row') 3
+            td(colspan='2') Larry the Bird
+            td @@twitter
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="mb-4">
+                                    Color can be added to a single row as well, also using the same
+                                    <code class="code-inline">.table-{color}</code>
+                                    classes.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="tableColorsRowDemoTab" data-bs-target="#tableColorsRowDemo" aria-controls="tableColorsRowDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="tableColorsRowHtmlTab" data-bs-target="#tableColorsRowHtml" aria-controls="tableColorsRowHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#tableColorsRowPug" role="tab" aria-controls="tableColorsRowPug" aria-selected="false" id="tableColorsRowPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="tableColorsRowDemo" aria-labelledby="tableColorsRowDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <table class="table table-bordered table-hover mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">First</th>
+                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Handle</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@@mdo</td>
+                                                    </tr>
+                                                    <tr class="table-primary">
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td colspan="2">Larry the Bird</td>
+                                                        <td>@@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableColorsRowHtml" aria-labelledby="tableColorsRowHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@@mdo</td>
+        </tr>
+        <tr class="table-primary">
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@@twitter</td>
+        </tr>
+    </tbody>
+</table></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableColorsRowPug" aria-labelledby="tableColorsRowPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code>table.table.table-bordered.table-hover
+    thead
+        tr
+            th(scope='col') #
+            th(scope='col') First
+            th(scope='col') Last
+            th(scope='col') Handle
+    tbody
+        tr
+            th(scope='row') 1
+            td Mark
+            td Otto
+            td @@mdo
+        tr.table-primary
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr
+            th(scope='row') 3
+            td(colspan='2') Larry the Bird
+            td @@twitter
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="mb-4">Color can also be applied to a single cell using the table color classes.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="tableColorsCellDemoTab" data-bs-target="#tableColorsCellDemo" aria-controls="tableColorsCellDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="tableColorsCellHtmlTab" data-bs-target="#tableColorsCellHtml" aria-controls="tableColorsCellHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#tableColorsCellPug" role="tab" aria-controls="tableColorsCellPug" aria-selected="false" id="tableColorsCellPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="tableColorsCellDemo" aria-labelledby="tableColorsCellDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <table class="table table-bordered table-hover mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">First</th>
+                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Handle</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@@mdo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td class="table-primary" colspan="2">Larry the Bird</td>
+                                                        <td>@@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableColorsCellHtml" aria-labelledby="tableColorsCellHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td class="table-primary" colspan="2">Larry the Bird</td>
+            <td>@@twitter</td>
+        </tr>
+    </tbody>
+</table></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableColorsCellPug" aria-labelledby="tableColorsCellPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code>table.table.table-bordered.table-hover.mb-0
+    thead
+        tr
+            th(scope='col') #
+            th(scope='col') First
+            th(scope='col') Last
+            th(scope='col') Handle
+    tbody
+        tr
+            th(scope='row') 1
+            td Mark
+            td Otto
+            td @@mdo
+        tr
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr
+            th(scope='row') 3
+            td.table-primary(colspan='2') Larry the Bird
+            td @@twitter
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>
+                                    The table specific background classes are used to change the color of entire tables, rows, or individual cells. The classes are named using the format
+                                    <code class="code-inline">.table-{color}</code>
+                                    where
+                                    <em>color</em>
+                                    is any color defined within the color map.
+                                </p>
+                                <p class="mb-4">The color options for tables are compatible with the hover, striped, and other table states.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="tableColorUtilitiesDemoTab" data-bs-target="#tableColorUtilitiesDemo" aria-controls="tableColorUtilitiesDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="tableColorUtilitiesHtmlTab" data-bs-target="#tableColorUtilitiesHtml" aria-controls="tableColorUtilitiesHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#tableColorUtilitiesPug" role="tab" aria-controls="tableColorUtilitiesPug" aria-selected="false" id="tableColorUtilitiesPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="tableColorUtilitiesDemo" aria-labelledby="tableColorUtilitiesDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <table class="table table-bordered table-hover mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">First</th>
+                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Handle</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="table-primary">
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@@mdo</td>
+                                                    </tr>
+                                                    <tr class="table-secondary">
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr class="table-success">
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr class="table-danger">
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr class="table-warning">
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr class="table-info">
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr class="table-light">
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                    <tr class="table-dark">
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@@fat</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableColorUtilitiesHtml" aria-labelledby="tableColorUtilitiesHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-primary">
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@@mdo</td>
+        </tr>
+        <tr class="table-secondary">
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr class="table-success">
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr class="table-danger">
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr class="table-warning">
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr class="table-info">
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr class="table-light">
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+        <tr class="table-dark">
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@@fat</td>
+        </tr>
+    </tbody>
+</table></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tableColorUtilitiesPug" aria-labelledby="tableColorUtilitiesPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code>table.table.table-bordered.table-hover
+    thead
+        tr
+            th(scope='col') #
+            th(scope='col') First
+            th(scope='col') Last
+            th(scope='col') Handle
+    tbody
+        tr.table-primary
+            th(scope='row') 1
+            td Mark
+            td Otto
+            td @@mdo
+        tr.table-secondary
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr.table-success
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr.table-danger
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr.table-warning
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr.table-info
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr.table-light
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+        tr.table-dark
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @@fat
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h3 class="overline">Related Links</h3>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-6 col-xxl-4">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/icons/data-tables.svg" />
+                                                <div class="card-title text-truncate mb-2">Data Tables Plugin</div>
+                                                <p class="card-text">Material Admin Pro Data Tables Plugin</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="/plugins/datatables" title="Data Tables Plugin">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-5"></div>
+                            </div>
+                            <div class="col-lg-3 mb-5 mb-lg-0">
+                                <div class="sticky-top nav-stick">
+                                    <div class="nav-heading">Contents</div>
+                                    <ul class="nav flex-column" id="navStick">
+                                        <li class="nav-item"><a class="nav-link" href="#default">Default</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#bordered">Bordered</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#hoverable">Hoverable</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#striped">Striped</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#small">Small</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#dark">Dark</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#color">Adding Color</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+@code {
+
+}

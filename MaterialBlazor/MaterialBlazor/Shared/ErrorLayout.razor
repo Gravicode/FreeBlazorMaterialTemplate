@@ -1,0 +1,32 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
+
+<PageTitle>MaterialBlazor</PageTitle>
+
+ <!-- Layout wrapper-->
+        <div id="layoutError">
+            <!-- Layout content-->
+            <div id="layoutError_content">
+                <!-- Main page content-->
+                <main>
+                   @Body
+                </main>
+            </div>
+            <!-- Layout footer-->
+            <div id="layoutError_footer">
+                <!-- Footer-->
+                <!-- Min-height is set inline to match the height of the drawer footer-->
+              <Footer></Footer>
+            </div>
+        </div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+            await JS.InvokeVoidAsync("LoadMaterial");
+        }
+    }
+}
