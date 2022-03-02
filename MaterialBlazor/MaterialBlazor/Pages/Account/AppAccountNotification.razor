@@ -1,0 +1,86 @@
+﻿ 
+@page "/account/app-account-notification"
+@inject IJSRuntime JS
+
+<PageTitle>App Account Notification</PageTitle>
+ <!-- Page header-->
+                    <header class="bg-dark">
+                        <div class="container-xl px-5"><h1 class="text-white py-3 mb-0 display-6">Account Settings - Notifications</h1></div>
+                    </header>
+                    <!-- Account notifications page content-->
+                    <div class="container-xl p-5">
+                        <!-- Tab bar navigation-->
+                        <mwc-tab-bar style="margin-bottom: -1px" activeIndex="1">
+                            <mwc-tab label="Billing" icon="account_balance" stacked onClick='location.href="app-account-billing.html"'></mwc-tab>
+                            <mwc-tab label="Notifications" icon="notifications" stacked onClick='location.href="app-account-notifications.html"'></mwc-tab>
+                            <mwc-tab label="Profile" icon="person" stacked onClick='location.href="app-account-profile.html"'></mwc-tab>
+                            <mwc-tab label="Security" icon="security" stacked onClick='location.href="app-account-security.html"'></mwc-tab>
+                        </mwc-tab-bar>
+                        <!-- Divider-->
+                        <hr class="mt-0 mb-5" />
+                        <!-- Notifications cards row-->
+                        <div class="row gx-5">
+                            <div class="col-lg-7">
+                                <!-- Email notifications preferences card-->
+                                <div class="card card-raised mb-5">
+                                    <div class="card-body p-5">
+                                        <div class="card-title">Email Notifications</div>
+                                        <div class="card-subtitle mb-4">Choose which types of email updates you will receive.</div>
+                                        <form>
+                                            <!-- Form Group (default email)-->
+                                            <div class="mb-4"><mwc-textfield class="w-100" label="Email Address" outlined type="email" disabled value="name@example.com"></mwc-textfield></div>
+                                            <!-- Form Group (email updates checkboxes)-->
+                                            <div class="d-flex flex-column">
+                                                <mwc-formfield label="Changes made to your account"><mwc-checkbox name="notificationsReceived" checked></mwc-checkbox></mwc-formfield>
+                                                <mwc-formfield label="Changes are made to groups you're part of"><mwc-checkbox name="notificationsReceived" checked></mwc-checkbox></mwc-formfield>
+                                                <mwc-formfield label="Product updates for products you've purchased or starred"><mwc-checkbox name="notificationsReceived" checked></mwc-checkbox></mwc-formfield>
+                                                <mwc-formfield label="Information on new products and services"><mwc-checkbox name="notificationsReceived" checked></mwc-checkbox></mwc-formfield>
+                                                <mwc-formfield label="Marketing and promotional offers"><mwc-checkbox name="notificationsReceived"></mwc-checkbox></mwc-formfield>
+                                                <mwc-formfield label="Security and account alerts"><mwc-checkbox name="notificationsReceived" checked disabled></mwc-checkbox></mwc-formfield>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- SMS push notifications card-->
+                                <div class="card card-raised mb-5">
+                                    <div class="card-body p-5">
+                                        <div class="card-title">Push Notifications</div>
+                                        <div class="card-subtitle mb-4">Choose which types of push notifications you receive.</div>
+                                        <form>
+                                            <!-- Form Group (default SMS number)-->
+                                            <div class="mb-4"><mwc-textfield class="w-100" label="SMS Number" outlined type="tel" value="407-555-0187" disabled></mwc-textfield></div>
+                                            <!-- Form Group (SMS updates checkboxes)-->
+                                            <div class="d-flex flex-column">
+                                                <mwc-formfield label="Someone comments on your post"><mwc-checkbox name="pushNotifications" checked></mwc-checkbox></mwc-formfield>
+                                                <mwc-formfield label="Someone shares your post"><mwc-checkbox name="pushNotifications"></mwc-checkbox></mwc-formfield>
+                                                <mwc-formfield label="A user follows your account"><mwc-checkbox name="pushNotifications" checked></mwc-checkbox></mwc-formfield>
+                                                <mwc-formfield label="New posts are made in groups you're part of"><mwc-checkbox name="pushNotifications"></mwc-checkbox></mwc-formfield>
+                                                <mwc-formfield label="You receive a private message"><mwc-checkbox name="pushNotifications" checked></mwc-checkbox></mwc-formfield>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <!-- Notifications preferences card-->
+                                <div class="card card-raised mb-5">
+                                    <div class="card-body p-5">
+                                        <div class="card-title">Notification Preferences</div>
+                                        <div class="card-subtitle mb-4">Global preferences for notifications that you will receive.</div>
+                                        <form>
+                                            <!-- Form Group (notification preference checkboxes)-->
+                                            <div class="d-flex flex-column mb-4">
+                                                <mwc-formfield label="Automatically subscribe to group notifications"><mwc-checkbox name="notificationPreferences" checked></mwc-checkbox></mwc-formfield>
+                                                <mwc-formfield label="Automatically subscribe to new product notifications"><mwc-checkbox name="notificationPreferences"></mwc-checkbox></mwc-formfield>
+                                            </div>
+                                            <!-- Submit button-->
+                                            <button class="btn btn-text-danger" type="button">Unsubscribe from all notifications</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+@code {
+
+}

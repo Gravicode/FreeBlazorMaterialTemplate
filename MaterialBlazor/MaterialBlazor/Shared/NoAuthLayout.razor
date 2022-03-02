@@ -1,0 +1,31 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
+
+<PageTitle>MaterialBlazor</PageTitle>
+
+<div class="bg-primary">
+  <!-- Layout wrapper-->
+        <div id="layoutAuthentication">
+            <!-- Layout content-->
+            <div id="layoutAuthentication_content">
+                <!-- Main page content-->
+                <main>
+                   @Body
+                </main>
+            </div>
+            <!-- Layout footer-->
+            <div id="layoutAuthentication_footer">
+               <AuthFooter></AuthFooter>
+            </div>
+        </div>
+</div>
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+            await JS.InvokeVoidAsync("LoadMaterial");
+        }
+    }
+}
